@@ -3,7 +3,7 @@ try:
     print("Enter a filename : ")
     filename = input()
     f = open(filename,"r")
-    read = f.read()
+    read = int(f.read())
     print(read)
     f.close()
 except IOError as err:

@@ -20,7 +20,6 @@ class Paint(object):
         self.pen_button = Button(self.root, text='pen', image=photo ,command=self.use_pen)
         self.pen_button.grid(row=0, column=0)
 
-
         self.brush_button = Button(self.root, text='brush', image=photo1,command=self.use_brush)
         self.brush_button.grid(row=0, column=1)
 
@@ -33,7 +32,7 @@ class Paint(object):
         self.choose_size_button = Scale(self.root, from_=1, to=10, orient=HORIZONTAL)
         self.choose_size_button.grid(row=0, column=4)
 
-        self.save_button = Button(self.root,text="Save",command=self.use_save)
+        #self.save_button = Button(self.root,text="Save",command=self.use_save)
 
         self.c = Canvas(self.root, bg='white', width=600, height=600)
         self.c.grid(row=2, columnspan=5)
@@ -64,9 +63,7 @@ class Paint(object):
     def use_eraser(self):
         self.activate_button(self.eraser_button, eraser_mode=True)
 
-    def use_save(self):
-        self.activate_button(self.save_button)
-        ImageGrab.grab().crop(self.c).save("em.jpg")
+
 
     def activate_button(self, some_button, eraser_mode=False):
         #self.active_button.config(relief=RAISED)
